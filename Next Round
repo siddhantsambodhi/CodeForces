@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n,k,val;
+	cin>>n>>k;
+	vector<int> v;
+	for(int i=0;i<n;i++){cin>>val; v.push_back(val);
+	}
+	int p=v[k-1];//due to index minus by 1
+	int count=0;
+	if(p>=0){//cheack it the number is positive
+		for(int i=0;i<n;i++){
+			
+			if(p==0){ //it the target number is zero then count only number is non-zero
+				if(v[i]>p){
+					count++;
+//					cout<<v[i]<<" ";
+				}
+			}
+			else if(v[i]>=p){//else p is not zero then check if the number greator or equal to the p
+				count++;
+			}
+		}
+		cout<<count;
+	}
+	else{
+		cout<<count;
+	}
+	
+	
+}
